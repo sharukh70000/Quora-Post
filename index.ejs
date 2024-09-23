@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Quora Post</h1>
+    <% for (const post of posts) { %>
+        <div class="post">
+            <h3 class="user">
+                @ <%= post.username %>
+            </h3>
+            <h4 class="content">
+                @<%= post.content %>
+            </h4>
+            <br>
+
+            <a href="http://localhost:8080/posts/<%= post.id %>">see in detail</a>
+            <!-- show a anchor tag or button in every post for see post in detail Like show more -->
+            <!-- <%= post.id %> for axis the post id. we can add our id inside the string also Link is a string -->
+            <!-- link will not work on that post which i will create new Post because there is no id for that post -->
+            <!-- we can make something like ki posts ke ander aane wali new post ke ley auto metic increasing form me  new id aa jay with counter varibale we can make it like i++  but it is not good way  -->
+
+            <a href="http://localhost:8080/posts/<%= post.id %>/edit">Edit</a>
+        </div>
+        <% } %>
+            <br>
+            <a href="http://localhost:8080/posts/new"> Create new post</a>
+
+</body>
+
+</html>
